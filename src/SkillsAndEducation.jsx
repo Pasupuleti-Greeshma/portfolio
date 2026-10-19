@@ -61,7 +61,7 @@ export default function SkillsAndEducation() {
                   {cat.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="px-3 py-1.5 text-xs font-mono rounded-xl bg-purple-50 border border-purple-50 text-zinc-300 hover:text-white hover:bg-blue-600/20 hover:border-blue-500/30 transition-all duration-200 cursor-default"
+                      className="px-3 py-1.5 text-xs font-mono rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 hover:text-cyan-300 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-200 cursor-default"
                     >
                       {skill}
                     </span>
