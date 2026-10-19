@@ -1,0 +1,51 @@
+name: 🚀 Deploy Portfolio to AWS EC2 (PM2 / Serve)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: 🏗️ Build & Deploy with PM2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🔨 Build Vite Production Bundle
+        run: npm run build
+
+      - name: 🚀 Copy 'dist' folder to EC2 via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          source: "dist/*"
+          target: "~/portfolio"
+          strip_components: 1
+
+      - name: 🔄 Reload Portfolio App on EC2 with PM2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          script: |
+            # Start or restart portfolio serving on port 80 as a SPA
+            pm2 delete portfolio 2> /dev/null || true
+            pm2 serve ~/portfolio 80 --spa --name "portfolio"
+            pm2 save
