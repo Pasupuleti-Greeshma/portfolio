@@ -25,14 +25,14 @@ export default function Navbar() {
   ];
 
   const navBg = scrolled 
-    ? 'py-4 bg-white/85 backdrop-blur-md border-b border-pink-100 shadow-lg shadow-purple-900/5' 
+    ? 'py-4 bg-white/5/85 backdrop-blur-md border-b border-white/10 shadow-lg shadow-purple-900/5' 
     : 'py-6 bg-transparent';
 
   return (
     <nav className={'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ' + navBg}>
       <div className='max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between'>
-        <a href='#' className='flex items-center gap-2 group text-xl font-bold tracking-tight text-slate-900 font-extrabold'>
-          <div className='w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center font-mono font-bold text-lg text-slate-900 font-extrabold shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform duration-300'>
+        <a href='#' className='flex items-center gap-2 group text-xl font-bold tracking-tight text-white font-extrabold'>
+          <div className='w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center font-mono font-bold text-lg text-white font-extrabold shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform duration-300'>
             GP
           </div>
           <span className='font-mono text-base tracking-normal'>
@@ -46,7 +46,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <a 
                   href={link.href}
-                  className='text-sm font-medium text-gray-400 hover:text-slate-900 font-extrabold transition-colors relative group py-1'
+                  className='text-sm font-medium text-gray-400 hover:text-white font-extrabold transition-colors relative group py-1'
                 >
                   {link.label}
                   <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-300 group-hover:w-full'></span>
@@ -55,7 +55,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className='h-4 w-px bg-white/10 mx-2'></div>
+          <div className='h-4 w-px bg-white/5/10 mx-2'></div>
 
           <div className='flex items-center gap-3'>
             <a
@@ -63,7 +63,7 @@ export default function Navbar() {
               target='_blank'
               rel='noopener noreferrer'
               aria-label='GitHub'
-              className='p-2 rounded-lg text-gray-400 hover:text-slate-900 font-extrabold hover:bg-white/5 transition-all'
+              className='p-2 rounded-lg text-gray-400 hover:text-white font-extrabold hover:bg-white/5/5 transition-all'
             >
               <Github className='w-4 h-4' />
             </a>
@@ -72,13 +72,13 @@ export default function Navbar() {
               target='_blank'
               rel='noopener noreferrer'
               aria-label='LinkedIn'
-              className='p-2 rounded-lg text-gray-400 hover:text-slate-900 font-extrabold hover:bg-white/5 transition-all'
+              className='p-2 rounded-lg text-gray-400 hover:text-white font-extrabold hover:bg-white/5/5 transition-all'
             >
               <Linkedin className='w-4 h-4' />
             </a>
             <a
               href='#contact'
-              className='inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider text-slate-900 font-extrabold bg-gradient-to-r from-pink-500 to-purple-600 hover:bg-blue-500 rounded-full transition-all duration-300 shadow-md shadow-blue-600/30 hover:shadow-blue-500/50 hover:scale-[1.02]'
+              className='inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider text-white font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 hover:bg-blue-500 rounded-full transition-all duration-300 shadow-md shadow-blue-600/30 hover:shadow-blue-500/50 hover:scale-[1.02]'
             >
               Hire Me
               <ArrowUpRight className='w-3.5 h-3.5' />
@@ -88,7 +88,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className='md:hidden p-2 rounded-lg text-gray-400 hover:text-slate-900 font-extrabold bg-white/5 border border-white/10'
+          className='md:hidden p-2 rounded-lg text-gray-400 hover:text-white font-extrabold bg-white/5/5 border border-white/10'
           aria-label='Toggle Navigation'
         >
           {mobileOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
@@ -103,7 +103,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className='text-base text-gray-300 hover:text-slate-900 font-extrabold transition-colors block py-1'
+                  className='text-base text-gray-300 hover:text-white font-extrabold transition-colors block py-1'
                 >
                   {link.label}
                 </a>
@@ -114,7 +114,7 @@ export default function Navbar() {
                 href={personalInfo.github}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-2 text-sm text-gray-400 hover:text-slate-900 font-extrabold'
+                className='flex items-center gap-2 text-sm text-gray-400 hover:text-white font-extrabold'
               >
                 <Github className='w-4 h-4' /> GitHub
               </a>
@@ -122,7 +122,7 @@ export default function Navbar() {
                 href={personalInfo.linkedin}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-2 text-sm text-gray-400 hover:text-slate-900 font-extrabold'
+                className='flex items-center gap-2 text-sm text-gray-400 hover:text-white font-extrabold'
               >
                 <Linkedin className='w-4 h-4' /> LinkedIn
               </a>

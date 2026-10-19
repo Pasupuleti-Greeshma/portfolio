@@ -30,10 +30,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#faf5ff] text-slate-800 font-sans selection:bg-pink-500/20 selection:text-pink-700 relative overflow-hidden">
-      <div className="fixed -top-40 -left-40 w-[600px] h-[600px] bg-pink-300/30 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-slow" />
-      <div className="fixed top-1/3 -right-40 w-[600px] h-[600px] bg-purple-300/25 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="fixed -bottom-40 left-1/4 w-[600px] h-[600px] bg-fuchsia-300/25 rounded-full blur-[140px] pointer-events-none -z-10" />
+    <div className="min-h-screen bg-[#030712] text-slate-100 font-sans selection:bg-blue-500/30 selection:text-blue-200 relative overflow-hidden">
+      <div className="fixed -top-40 -left-40 w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-slow" />
+      <div className="fixed top-1/3 -right-40 w-[600px] h-[600px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="fixed -bottom-40 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
 
       <Navbar activeSection={activeSection} />
