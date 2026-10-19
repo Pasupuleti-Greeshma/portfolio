@@ -1,4 +1,4 @@
-export const personalInfo = {
+﻿export const personalInfo = {
   "name": "Greeshma",
   "surname": "Pasupuleti",
   "role": "Full Stack Developer",
@@ -146,6 +146,7 @@ export const projects = [
   {
     "id": "01",
     "title": "PGMove & Stayzy Platform",
+      "image": "/project-pgmove.jpg",
     "subtitle": "Tenant Lifecycle & Real-Time Property Discovery SaaS",
     "category": "Enterprise SaaS",
     "accentColor": "#3b82f6",
@@ -170,6 +171,7 @@ export const projects = [
   {
     "id": "02",
     "title": "Interactive Expenses Tracker",
+      "image": "/project-tracker.jpg",
     "subtitle": "Personal Finance Analytics & Ledger System",
     "category": "Full-Stack FinTech",
     "accentColor": "#10b981",
@@ -194,6 +196,7 @@ export const projects = [
   {
     "id": "03",
     "title": "Airline Management System",
+      "image": "/project-airline.jpg",
     "subtitle": "Distributed Flight Scheduling & Seat Inventory Engine",
     "category": "Distributed Enterprise System",
     "accentColor": "#8b5cf6",
@@ -265,4 +268,5 @@ export const skillCategories = [
     ]
   }
 ];
+
 
