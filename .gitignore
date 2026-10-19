@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# AI Review & local env
+ai-review-report.md
+.env
+.env.*
+!.env.example
