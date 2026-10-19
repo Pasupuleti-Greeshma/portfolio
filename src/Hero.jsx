@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section id="about" className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-16 overflow-hidden bg-grid-pattern">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-600/15 rounded-full blur-[140px] animate-pulse-slow"></div>
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-pink-500 to-purple-600/15 rounded-full blur-[140px] animate-pulse-slow"></div>
         <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[130px]"></div>
         <div className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[120px]"></div>
       </div>
@@ -19,23 +19,23 @@ export default function Hero() {
           <span>Open for Opportunities & Collaborations</span>
           <span className="text-gray-500">|</span>
           <span className="flex items-center gap-1 text-gray-300">
-            <MapPin className="w-3 h-3 text-blue-400" /> Hyderabad, India
+            <MapPin className="w-3 h-3 text-pink-700" /> Hyderabad, India
           </span>
         </div>
 
         <div className="relative mb-8 text-center">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-none">
-            {personalInfo.name} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">{personalInfo.surname}</span>
+            {personalInfo.name} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600">{personalInfo.surname}</span>
           </h1>
-          <div className="h-1 w-24 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 mt-4"></div>
+          <div className="h-1 w-24 mx-auto rounded-full bg-gradient-to-r from-pink-500 to-purple-500 mt-4"></div>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-3 max-w-3xl mb-8">
-          <span className="font-mono text-sm md:text-base text-blue-400 font-semibold tracking-wider uppercase bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-md">
+          <span className="font-mono text-sm md:text-base text-blue-400 font-semibold tracking-wider uppercase bg-pink-50 border border-pink-200 px-3 py-1 rounded-md">
             {personalInfo.role}
           </span>
-          <span className="text-zinc-600">&middot;</span>
-          <span className="font-mono text-sm md:text-base text-zinc-300 tracking-wider">
+          <span className="text-purple-300">&middot;</span>
+          <span className="font-mono text-sm md:text-base text-slate-700 tracking-wider">
             Spring Boot & React Specialist
           </span>
           <span className="text-zinc-600">&middot;</span>
@@ -44,14 +44,14 @@ export default function Hero() {
           </span>
         </div>
 
-        <p className="max-w-2xl text-base sm:text-lg text-zinc-400 font-light leading-relaxed mb-10">
+        <p className="max-w-2xl text-base sm:text-lg text-slate-600 font-light leading-relaxed mb-10">
           {personalInfo.tagline}
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
           <a
             href="#projects"
-            className="group px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:scale-105 flex items-center gap-2"
+            className="group px-7 py-3.5 rounded-full bg-blue-600 hover:from-pink-600 hover:to-purple-700 text-white font-medium text-sm transition-all duration-300 shadow-lg shadow-pink-500/25 hover:shadow-blue-500/50 hover:scale-105 flex items-center gap-2"
           >
             <span>Explore Projects</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -61,7 +61,7 @@ export default function Hero() {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3.5 rounded-full glass-panel hover:bg-white/10 text-zinc-200 font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-white/15"
+            className="px-6 py-3.5 rounded-full glass-panel hover:bg-white/10 text-slate-700 font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-pink-200"
           >
             <Github className="w-4 h-4 text-white" />
             <span>GitHub Profile</span>
@@ -76,7 +76,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl pt-8 border-t border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl pt-8 border-t border-pink-100">
           {stats.map((stat, i) => (
             <div key={i} className="p-4 rounded-2xl glass-panel text-center group hover:border-blue-500/40 transition-colors">
               <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white group-hover:text-blue-400 transition-colors">
@@ -90,9 +90,9 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="w-full mt-20 pt-8 pb-4 border-y border-white/5 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent overflow-hidden">
+      <div className="w-full mt-20 pt-8 pb-4 border-y border-pink-100 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-3 text-center">
-          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-500">
+          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-purple-900/60">
             Tech Arsenal & Frameworks
           </span>
         </div>

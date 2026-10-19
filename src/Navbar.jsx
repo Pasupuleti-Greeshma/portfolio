@@ -25,7 +25,7 @@ export default function Navbar() {
   ];
 
   const navBg = scrolled 
-    ? 'py-4 bg-[#030712]/80 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/40' 
+    ? 'py-4 bg-white/85 backdrop-blur-md border-b border-pink-100 shadow-lg shadow-purple-900/5' 
     : 'py-6 bg-transparent';
 
   return (
@@ -36,7 +36,7 @@ export default function Navbar() {
             GP
           </div>
           <span className='font-mono text-base tracking-normal'>
-            Greeshma<span className='text-blue-500'>.</span>dev
+            Greeshma<span className='text-pink-500'>.</span>dev
           </span>
         </a>
 
@@ -78,7 +78,7 @@ export default function Navbar() {
             </a>
             <a
               href='#contact'
-              className='inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all duration-300 shadow-md shadow-blue-600/30 hover:shadow-blue-500/50 hover:scale-[1.02]'
+              className='inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-pink-500 to-purple-600 hover:bg-blue-500 rounded-full transition-all duration-300 shadow-md shadow-blue-600/30 hover:shadow-blue-500/50 hover:scale-[1.02]'
             >
               Hire Me
               <ArrowUpRight className='w-3.5 h-3.5' />
