@@ -132,35 +132,47 @@ ${diffText}
     }
   };
 
-  // Perform HTTP POST request using Node's native fetch API
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-goog-api-key': GEMINI_API_KEY // Pass the API key securely via Google header
-    },
-    body: JSON.stringify(payload)
-  });
+  // Try models with retry logic for 503/429 spikes
+  const candidateModels = ["gemini-3.8-flash", "gemini-2.5-flash-lite", "gemini-flash-latest"];
 
-  // Handle network or HTTP errors from Google API
-  if (!response.ok) {
-    const errorBody = await response.text();
-    throw new Error(`Gemini API error (HTTP ${response.status}): ${errorBody}`);
+  for (const modelName of candidateModels) {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent`;
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': GEMINI_API_KEY
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.status === 503 || response.status === 429) {
+          console.warn(`⚠️ Model ${modelName} returned HTTP ${response.status}. Retrying in 2s... (attempt ${attempt})`);
+          await new Promise(r => setTimeout(r, 2000));
+          continue;
+        }
+
+        if (!response.ok) {
+          const errorBody = await response.text();
+          throw new Error(`Gemini API error (HTTP ${response.status}): ${errorBody}`);
+        }
+
+        const result = await response.json();
+        const rawText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (!rawText) throw new Error("Empty response received from Gemini API.");
+
+        return JSON.parse(rawText);
+      } catch (err) {
+        if (attempt === 2) {
+          console.warn(`⚠️ Model ${modelName} failed, attempting next available fallback model...`);
+        }
+      }
+    }
   }
 
-  const result = await response.json(); // Parse API response JSON envelope
-  const rawText = result.candidates?.[0]?.content?.parts?.[0]?.text; // Extract generated text response
-
-  if (!rawText) {
-    throw new Error("Empty response received from Gemini API.");
-  }
-
-  try {
-    return JSON.parse(rawText); // Parse the LLM's text output into a real JavaScript object
-  } catch (parseErr) {
-    console.error("Raw response could not be parsed as JSON:", rawText);
-    throw new Error(`Failed to parse AI review output as JSON: ${parseErr.message}`);
-  }
+  throw new Error("All Gemini model attempts exhausted due to high traffic demand.");
 }
 
 // ==========================================

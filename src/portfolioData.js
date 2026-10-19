@@ -1,4 +1,4 @@
-﻿export const personalInfo = {
+export const personalInfo = {
   "name": "Greeshma",
   "surname": "Pasupuleti",
   "role": "Full Stack Developer",
@@ -195,30 +195,31 @@ export const projects = [
     },
     {
       "id": "03",
-    "title": "Airline Management System",
-      "image": "/project-airline.jpg",
-    "subtitle": "Distributed Flight Scheduling & Seat Inventory Engine",
-    "category": "Distributed Enterprise System",
-    "accentColor": "#8b5cf6",
-    "description": "Enterprise airline reservation platform featuring flight scheduling, real-time seat inventory, multi-tier passenger booking, and administrative operational dashboards.",
-    "codeSnippet": "// Concurrency-Safe Flight Reservation\n@Transactional(isolation = Isolation.SERIALIZABLE)\npublic BookingResponse reserveSeat(Long flightId, String seatNumber) {\n Seat seat = seatRepository.lockSeat(flightId, seatNumber);\n if (seat.isBooked()) throw new SeatTakenException();\n seat.setBooked(true);\n return bookingService.confirm(seat);\n}",
-    "bullets": [
-      "Real-time seat inventory matrix with transaction safety",
-      "Distinct Role-Based Access Control (Admin / Passenger)",
-      "Normalized flight scheduling and automated booking confirmation"
-    ],
-    "techStack": [
-      "Java",
-      "Spring Boot",
-      "JavaScript",
-      "React.js",
-      "MySQL",
-      "REST APIs"
-    ],
-    "github": "https://github.com/Pasupuleti-Greeshma",
-    "live": "https://github.com/Pasupuleti-Greeshma"
-  }
-];
+      "title": "Automated AI Review & AWS EC2 CD Pipeline",
+      "image": "/project-devops-ai.jpg",
+      "subtitle": "Autonomous Gemini Gatekeeper & Production EC2 Continuous Deployment",
+      "category": "Cloud & DevOps Automation",
+      "accentColor": "#8b5cf6",
+      "description": "Production-grade CI/CD and AI Gatekeeper automation engineered with GitHub Actions and Google Gemini 3.8. Automatically audits Pull Requests across security vulnerabilities, code quality, and accessibility with strict merge-blocking enforcement, triggering zero-downtime SCP/SSH production deployments to AWS EC2 managed by PM2.",
+      "codeSnippet": "// Autonomous AI Gatekeeper & CI/CD Pipeline\nasync function enforceMergeGate(diff: string) {\n  const evaluation = await queryGeminiGatekeeper(diff);\n  if (!evaluation.passed) {\n    await postPrFeedback(evaluation.criticalBlockers);\n    process.exit(1); // Hard block PR merge in GitHub Actions\n  }\n  return triggerAwsEc2Deployment({ host: EC2_HOST, pm2Service: 'portfolio' });\n}",
+      "bullets": [
+        "Autonomous PR code review gatekeeper powered by Google Gemini 3.8 Flash enforcing strict merge rules",
+        "Automated secret leakage, vulnerability detection, and React/Tailwind quality audits",
+        "Zero-downtime continuous deployment to AWS EC2 with SCP asset syncing and PM2 daemon lifecycle management"
+      ],
+      "techStack": [
+        "GitHub Actions",
+        "AWS EC2",
+        "Google Gemini API",
+        "Node.js",
+        "PM2",
+        "Linux / Bash",
+        "CI/CD Pipelines"
+      ],
+      "github": "https://github.com/Pasupuleti-Greeshma/portfolio",
+      "live": "https://github.com/Pasupuleti-Greeshma/portfolio/actions"
+    }
+  ];
 
 export const skillCategories = [
   {
