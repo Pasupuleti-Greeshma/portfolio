@@ -4,7 +4,7 @@ import { experiences } from './portfolioData';
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-28 relative bg-[#030712] overflow-hidden">
+    <section id="experience" className="py-20 relative bg-[#030712] overflow-hidden">
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[140px] pointer-events-none"></div>
       <div className="absolute bottom-10 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-[140px] pointer-events-none"></div>
 

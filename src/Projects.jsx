@@ -5,9 +5,9 @@ import { projects } from './portfolioData';
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28 relative bg-[#030712] overflow-hidden">
+    <section id="projects" className="py-20 relative bg-[#030712] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-24">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-pill text-xs font-mono text-blue-400 mb-3 uppercase tracking-wider">
             <Layers className="w-3.5 h-3.5" /> Selected Works
           </div>
@@ -49,7 +49,7 @@ export default function Projects() {
                         <Code2 className="w-4 h-4 text-zinc-500" />
                       </div>
 
-                      <pre className="p-6 font-mono text-xs sm:text-sm text-zinc-300 overflow-x-auto leading-relaxed bg-[#0a0f1d]/90">
+                      <pre className="p-6 m-0 rounded-b-none font-mono text-xs sm:text-sm text-zinc-300 overflow-x-auto leading-relaxed bg-[#0a0f1d]/90">
                         <code>{proj.codeSnippet}</code>
                       </pre>
 

@@ -30,10 +30,10 @@ export default function Contact() {
   };
 
   return (
-    <footer id="contact" className="py-28 relative bg-[#02050e] border-t border-white/10 overflow-hidden">
+    <footer id="contact" className="py-20 relative bg-[#02050e] border-t border-white/10 overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none"></div>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           <div className="space-y-8">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-pill text-xs font-mono text-blue-400 mb-3 uppercase tracking-wider">

@@ -23,14 +23,11 @@ export default function Hero() {
           </span>
         </div>
 
-        <div className="relative mb-6">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter text-white select-none leading-none">
-            {personalInfo.name}
+        <div className="relative mb-8 text-center">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-none">
+            {personalInfo.name} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">{personalInfo.surname}</span>
           </h1>
-          <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-zinc-400 via-zinc-200 to-blue-500 select-none leading-tight">
-            {personalInfo.surname}
-            <span className="text-blue-500">.</span>
-          </h2>
+          <div className="h-1 w-24 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 mt-4"></div>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-3 max-w-3xl mb-8">
@@ -71,7 +68,7 @@ export default function Hero() {
           </a>
 
           <a
-            href={'mailto;' + personalInfo.email}
+            href={'mailto:' + personalInfo.email}
             className="px-6 py-3.5 rounded-full glass-panel hover:bg-white/10 text-zinc-200 font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-white/15"
           >
             <Mail className="w-4 h-4 text-blue-400" />

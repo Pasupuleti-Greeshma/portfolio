@@ -1,4 +1,7 @@
 export const personalInfo = {
+  "name": "Greeshma",
+  "surname": "Pasupuleti",
+  "role": "Full Stack Developer",
   "fullName": "Pasupuleti Chandana Greeshma Naidu",
   "displayName": "Greeshma Pasupuleti",
   "title": "Full Stack Developer",
@@ -40,21 +43,54 @@ export const stats = [
 ];
 
 export const marqueeTech = [
-  "React.js",
-  "React Native",
-  "Java",
-  "Spring Boot",
-  "Node.js",
-  "JavaScript ES6+",
-  "TypeScript",
-  "Tailwind CSS",
-  "MySQL",
-  "MongoDB",
-  "AWS Cloud",
-  "CI/CD Pipelines",
-  "REST APIs",
-  "RAG and MCP",
-  "GitLab AI Automation"
+  {
+    "name": "React.js",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+  },
+  {
+    "name": "Spring Boot",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+  },
+  {
+    "name": "Java",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+  },
+  {
+    "name": "Node.js",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+  },
+  {
+    "name": "Tailwind CSS",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+  },
+  {
+    "name": "MySQL",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+  },
+  {
+    "name": "MongoDB",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+  },
+  {
+    "name": "AWS Cloud",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+  },
+  {
+    "name": "GitLab CI/CD",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"
+  },
+  {
+    "name": "Git & GitHub",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+  }
 ];
 
 export const experiences = [
