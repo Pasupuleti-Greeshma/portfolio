@@ -37,7 +37,7 @@ export default function App() {
 
 
       <Navbar activeSection={activeSection} />
-      <main className="relative z-10 flex flex-col gap-28 sm:gap-36 pb-28">
+      <main className="relative z-10 flex flex-col gap-12 sm:gap-16 pb-12">
         <Hero />
         <Experience />
         <Projects />

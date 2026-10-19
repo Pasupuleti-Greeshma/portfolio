@@ -22,11 +22,11 @@ const iconMap = {
 
 export default function SkillsAndEducation() {
   return (
-    <section id="skills" className="py-20 relative bg-transparent overflow-hidden">
+    <section id="skills" className="py-4 relative bg-transparent overflow-hidden">
       <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-pill text-xs font-mono text-pink-600 mb-3 uppercase tracking-wider">
             <Cpu className="w-3.5 h-3.5" /> Technical Matrix
           </div>
@@ -38,7 +38,7 @@ export default function SkillsAndEducation() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {skillCategories.map((cat, idx) => {
             const Icon = iconMap[cat.icon] || Code2;
             return (

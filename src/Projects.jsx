@@ -5,9 +5,9 @@ import { projects } from './portfolioData';
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 relative bg-transparent overflow-hidden">
+    <section id="projects" className="py-4 relative bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-pill text-xs font-mono text-pink-600 mb-3 uppercase tracking-wider">
             <Layers className="w-3.5 h-3.5" /> Selected Works
           </div>
@@ -19,7 +19,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="space-y-28">
+        <div className="space-y-10">
           {projects.map((proj, idx) => {
             const isEven = idx % 2 === 1;
             return (
