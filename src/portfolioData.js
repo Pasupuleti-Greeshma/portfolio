@@ -168,33 +168,33 @@ export const projects = [
     "github": "https://github.com/Pasupuleti-Greeshma",
     "live": "https://github.com/Pasupuleti-Greeshma"
   },
-  {
-    "id": "02",
-    "title": "Interactive Expenses Tracker",
-      "image": "/project-tracker.jpg",
-    "subtitle": "Personal Finance Analytics & Ledger System",
-    "category": "Full-Stack FinTech",
-    "accentColor": "#10b981",
-    "description": "Comprehensive personal finance management suite for tracking cash flows, categorizing transactions, and analyzing spending habits through interactive data visualizations.",
-    "codeSnippet": "// Spring Boot REST Controller\n@RestController\n@RequestMapping(/api/v1/expenses)\npublic class ExpenseController {\n @GetMapping(/analytics/monthly)\n public ResponseEntity<TrendsDTO> getTrends(\n @AuthenticationPrincipal User user) {\n return ResponseEntity.ok(analyticsService.calculate(user.getId()));\n }\n}",
-    "bullets": [
-      "Interactive visual charts for monthly spending patterns",
-      "Normalized relational MySQL ledger with category filters",
-      "Secure REST endpoints with role-based auth and validations"
-    ],
-    "techStack": [
-      "Java",
-      "Spring Boot",
-      "React.js",
-      "MySQL",
-      "REST APIs",
-      "Tailwind CSS"
-    ],
-    "github": "https://github.com/Pasupuleti-Greeshma",
-    "live": "https://github.com/Pasupuleti-Greeshma"
-  },
-  {
-    "id": "03",
+      {
+      "id": "02",
+      "title": "GitHub & GitLab MCP Server",
+      "image": "/project-mcp.jpg",
+      "subtitle": "AI Agent Model Context Protocol Infrastructure & Tool Ecosystem",
+      "category": "AI & Developer Tooling",
+      "accentColor": "#06b6d4",
+      "description": "High-performance Model Context Protocol (MCP) server engineered in TypeScript to empower autonomous AI agents (Claude Desktop, Antigravity IDE, Cursor) with real-time GitHub/GitLab repository intelligence, automated PR/MR tracking, and CI/CD workflow telemetry.",
+      "codeSnippet": "// Model Context Protocol (MCP) Tool Handler\nimport { serveStdio } from \"@modelcontextprotocol/server/stdio\";\n\nserver.setRequestHandler(CallToolRequestSchema, async (request) => {\n  switch (request.params.name) {\n    case \"get_github_overview\":\n      return await fetchAccountPulse(authContext);\n    case \"search_pull_requests\":\n      return await queryRepoPullRequests(request.params.arguments);\n    default:\n      throw new McpError(ErrorCode.MethodNotFound, \"Tool unknown\");\n  }\n});",
+      "bullets": [
+        "Full JSON-RPC protocol implementation streaming stdio tool calls for autonomous AI agents",
+        "Executive account telemetry: Real-time tracking of Pull Requests, Branches, and Issues",
+        "Bi-directional GitHub/GitLab CI/CD pipeline automation and code review workflows"
+      ],
+      "techStack": [
+        "TypeScript",
+        "Node.js",
+        "Model Context Protocol",
+        "JSON-RPC",
+        "GitHub REST / GraphQL",
+        "GitLab API"
+      ],
+      "github": "https://github.com/Pasupuleti-Greeshma",
+      "live": "https://github.com/Pasupuleti-Greeshma"
+    },
+    {
+      "id": "03",
     "title": "Airline Management System",
       "image": "/project-airline.jpg",
     "subtitle": "Distributed Flight Scheduling & Seat Inventory Engine",
