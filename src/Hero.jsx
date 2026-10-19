@@ -1,9 +1,18 @@
-﻿import React from 'react';
-import { ArrowRight, Mail, MapPin, Sparkles, Code2, Terminal } from "lucide-react";
-import { GithubIcon as Github, LinkedinIcon as Linkedin } from "./Icons";
+﻿import React, { useRef } from 'react';
+import { ArrowRight, Mail, MapPin, Code2, ChevronLeft, ChevronRight } from "lucide-react";
+import { GithubIcon as Github } from "./Icons";
 import { personalInfo, stats, marqueeTech } from './portfolioData';
 
 export default function Hero() {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -300 : 300;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="about" className="relative min-h-[92vh] flex flex-col justify-between items-center pt-28 pb-8 overflow-hidden bg-grid-pattern">
       {/* Background Ambient Glows */}
@@ -103,22 +112,49 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Marquee Banner */}
-      <div className="w-full mt-10 pt-5 pb-3 border-y border-slate-800/80 bg-slate-950/70 backdrop-blur-md overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 mb-2.5 text-center">
-          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-cyan-400 font-semibold">
+      {/* Tech Arsenal & Frameworks with Scroll Buttons */}
+      <div className="w-full mt-10 pt-4 pb-3 border-y border-slate-800/80 bg-slate-950/80 backdrop-blur-md relative group/arsenal">
+        <div className="max-w-7xl mx-auto px-6 mb-2.5 flex items-center justify-between">
+          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-cyan-400 font-semibold flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
             Tech Arsenal & Frameworks
           </span>
+
+          {/* Left and Right Navigation Buttons */}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => scroll('left')}
+              className="w-7 h-7 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-400/60 text-slate-300 hover:text-cyan-300 flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scroll('right')}
+              className="w-7 h-7 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-400/60 text-slate-300 hover:text-cyan-300 flex items-center justify-center transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
-        <div className="flex overflow-hidden relative">
-          <div className="flex gap-8 animate-marquee items-center pl-4">
-            {[...marqueeTech, ...marqueeTech, ...marqueeTech].map((tech, idx) => (
+
+        {/* Scrollable Container with Smooth Touch & Mouse Drag */}
+        <div className="relative px-4">
+          <div 
+            ref={scrollRef}
+            className="flex gap-3.5 overflow-x-auto scroll-smooth py-1 px-2 no-scrollbar"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {[...marqueeTech, ...marqueeTech].map((tech, idx) => (
               <div 
                 key={idx}
-                className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700/60 hover:border-cyan-400/50 shadow-sm transition-all duration-200 cursor-pointer shrink-0"
+                className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700/70 hover:border-cyan-400/60 shadow-sm transition-all duration-200 cursor-pointer shrink-0 select-none group/item"
               >
                 <img src={tech.icon} alt={tech.name} className="w-5 h-5 object-contain" />
-                <span className="text-xs font-mono text-slate-200 font-semibold tracking-wider uppercase hover:text-cyan-300">
+                <span className="text-xs font-mono text-slate-200 font-semibold tracking-wider uppercase group-hover/item:text-cyan-300">
                   {tech.name}
                 </span>
               </div>
