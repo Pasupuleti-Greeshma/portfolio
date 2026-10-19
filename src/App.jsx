@@ -1,4 +1,4 @@
-import React, { wCitState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Hero from './Hero';
 import Experience from './Experience';
@@ -7,11 +7,11 @@ import SkillsAndEducation from './SkillsAndEducation';
 import Contact from './Contact';
 
 export default function App() {
-  const [section, setSection] = React.useState('hero');
+  const [activeSection, setActiveSection] = useState('about');
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'experience', 'projects', 'skills', 'contact'];
+      const sections = ['about', 'experience', 'projects', 'skills', 'contact'];
       const scrollPos = window.scrollY + 200;
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
@@ -19,7 +19,7 @@ export default function App() {
           const top = el.offsetTop;
           const height = el.offsetHeight;
           if (scrollPos >= top && scrollPos < top + height) {
-            setSection(sectionId);
+            setActiveSection(sectionId);
             break;
           }
         }
@@ -30,11 +30,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 font-sans relative overflow-hidden">
-      <div className="fixed -top-40 -left-40 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse" />
+    <div className="min-h-screen bg-[#030712] text-slate-100 font-sans selection:bg-blue-500/30 selection:text-blue-200 relative overflow-hidden">
+      <div className="fixed -top-40 -left-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse" />
       <div className="fixed top-1/3 -right-40 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="fixed -bottom-40 left-1/3 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <Navbar activeSection={section} />
+      <div className="fixed -bottom-40 left-1/3 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <Navbar activeSection={activeSection} />
       <main className="relative z-10">
         <Hero />
         <Experience />
