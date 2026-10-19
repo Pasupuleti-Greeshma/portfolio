@@ -217,7 +217,7 @@ export const projects = [
         "CI/CD Pipelines"
       ],
       "github": "https://github.com/Pasupuleti-Greeshma/portfolio",
-      "live": "http://40.192.121.97"
+      "live": "https://github.com/Pasupuleti-Greeshma/portfolio/actions"
     }
   ];
 
