@@ -31,7 +31,7 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-3 max-w-3xl mb-8">
-          <span className="font-mono text-sm md:text-base text-blue-400 font-semibold tracking-wider uppercase bg-blue-500/10 border border-white/10 px-3 py-1 rounded-md">
+          <span className="font-mono text-sm md:text-base text-blue-400 font-semibold tracking-wider uppercase bg-blue-500/10 border border-indigo-500/30 px-3 py-1 rounded-md">
             {personalInfo.role}
           </span>
           <span className="text-zinc-600">&middot;</span>
@@ -61,7 +61,7 @@ export default function Hero() {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3.5 rounded-full glass-panel hover:glass-panel/10 text-zinc-300 font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-white/10"
+            className="px-6 py-3.5 rounded-full glass-panel hover:glass-panel/10 text-zinc-300 font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-indigo-500/30"
           >
             <Github className="w-4 h-4 text-white" />
             <span>GitHub Profile</span>
@@ -76,7 +76,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl pt-8 border-t border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl pt-8 border-t border-indigo-500/30">
           {stats.map((stat, i) => (
             <div key={i} className="p-4 rounded-2xl glass-panel text-center group hover:border-blue-500/40 transition-colors">
               <div className="text-2xl sm:text-3xl font-extrabold font-mono text-white group-hover:text-blue-400 transition-colors">
@@ -90,9 +90,9 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="w-full mt-8 pt-8 pb-4 border-y border-white/10 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent overflow-hidden">
+      <div className="w-full mt-8 pt-8 pb-4 border-y border-indigo-500/30 bg-gradient-to-r from-[#0b0f19] via-[#111827] to-[#0b0f19] shadow-xl shadow-indigo-950/50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 mb-3 text-center">
-          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-200/60">
+          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-cyan-400">
             Tech Arsenal & Frameworks
           </span>
         </div>
@@ -101,10 +101,10 @@ export default function Hero() {
             {[...marqueeTech, ...marqueeTech, ...marqueeTech].map((tech, idx) => (
               <div 
                 key={idx}
-                className="flex items-center gap-3 transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-110 cursor-pointer shrink-0"
+                className="flex items-center gap-3 flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-[#1e293b]/90 hover:bg-[#1e293b] border border-indigo-400/30 hover:border-cyan-400/60 shadow-md shadow-indigo-950/40 hover:shadow-cyan-500/20 hover:scale-105 transition-all duration-200 cursor-pointer shrink-0"
               >
                 <img src={tech.icon} alt={tech.name} className="w-5 h-5 object-contain" />
-                <span className="text-xs font-mono text-zinc-400 tracking-wider uppercase hover:text-white">
+                <span className="text-xs font-mono text-slate-200 font-bold tracking-wider uppercase hover:text-cyan-300">
                   {tech.name}
                 </span>
               </div>

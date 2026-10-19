@@ -1,13 +1,13 @@
 import React from 'react';
-import { 
-  Code2, 
-  Layout, 
-  Server, 
-  Database, 
-  Cloud, 
-  Cpu, 
-  GraduationCap, 
-  Award 
+import {
+  Code2,
+  Layout,
+  Server,
+  Database,
+  Cloud,
+  Cpu,
+  GraduationCap,
+  Award
 } from 'lucide-react';
 import { skillCategories, personalInfo } from './portfolioData';
 
@@ -47,7 +47,7 @@ export default function SkillsAndEducation() {
                 className="glass-panel rounded-3xl p-8 border border-white/10 hover:border-blue-500/30 transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/15 transition-all"></div>
-                
+
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 rounded-2xl bg-purple-50 border border-white/10 group-hover:border-blue-500/40 text-blue-400 transition-colors">
                     <Icon className="w-5 h-5" />

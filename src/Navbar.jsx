@@ -25,7 +25,7 @@ export default function Navbar() {
   ];
 
   const navBg = scrolled 
-    ? 'py-4 bg-white/5/85 backdrop-blur-md border-b border-white/10 shadow-lg shadow-purple-900/5' 
+    ? 'py-4 bg-[#1e293b]/90/85 backdrop-blur-md border-b border-indigo-500/30 shadow-lg shadow-purple-900/5' 
     : 'py-6 bg-transparent';
 
   return (
@@ -55,7 +55,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className='h-4 w-px bg-white/5/10 mx-2'></div>
+          <div className='h-4 w-px bg-[#1e293b]/90/10 mx-2'></div>
 
           <div className='flex items-center gap-3'>
             <a
@@ -63,7 +63,7 @@ export default function Navbar() {
               target='_blank'
               rel='noopener noreferrer'
               aria-label='GitHub'
-              className='p-2 rounded-lg text-gray-400 hover:text-white font-extrabold hover:bg-white/5/5 transition-all'
+              className='p-2 rounded-lg text-gray-400 hover:text-white font-extrabold hover:bg-[#1e293b]/90/5 transition-all'
             >
               <Github className='w-4 h-4' />
             </a>
@@ -72,7 +72,7 @@ export default function Navbar() {
               target='_blank'
               rel='noopener noreferrer'
               aria-label='LinkedIn'
-              className='p-2 rounded-lg text-gray-400 hover:text-white font-extrabold hover:bg-white/5/5 transition-all'
+              className='p-2 rounded-lg text-gray-400 hover:text-white font-extrabold hover:bg-[#1e293b]/90/5 transition-all'
             >
               <Linkedin className='w-4 h-4' />
             </a>
@@ -88,7 +88,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className='md:hidden p-2 rounded-lg text-gray-400 hover:text-white font-extrabold bg-white/5/5 border border-white/10'
+          className='md:hidden p-2 rounded-lg text-gray-400 hover:text-white font-extrabold bg-[#1e293b]/90/5 border border-indigo-500/30'
           aria-label='Toggle Navigation'
         >
           {mobileOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
@@ -96,7 +96,7 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className='md:hidden bg-[#0a0f1d] border-b border-white/10 px-6 py-6 shadow-2xl'>
+        <div className='md:hidden bg-[#0a0f1d] border-b border-indigo-500/30 px-6 py-6 shadow-2xl'>
           <ul className='flex flex-col gap-4'>
             {navLinks.map((link) => (
               <li key={link.label}>
@@ -109,7 +109,7 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
-            <li className='pt-4 border-t border-white/10 flex gap-4'>
+            <li className='pt-4 border-t border-indigo-500/30 flex gap-4'>
               <a
                 href={personalInfo.github}
                 target='_blank'
