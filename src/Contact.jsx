@@ -92,7 +92,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-xs font-mono text-slate-500 uppercase">Direct Email</div>
-                    <a href={'mailto:' + personalInfo.email} className="text-sm sm:text-base font-semibold text-white hover:text-cyan-400 transition-colors">
+                    <a href={'mailto:' + personalInfo.email} className="text-xs min-[400px]:text-sm sm:text-base font-semibold text-white hover:text-cyan-400 transition-colors break-all">
                       {personalInfo.email}
                     </a>
                   </div>
