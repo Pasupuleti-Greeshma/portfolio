@@ -24,7 +24,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center flex-1 justify-center">
         {/* Availability Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/80 shadow-lg shadow-indigo-950/20 text-xs font-medium text-slate-200 mb-6 backdrop-blur-md hover:border-cyan-500/50 transition-all duration-300">
+        <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 px-3 sm:px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/80 shadow-lg shadow-indigo-950/20 text-[11px] sm:text-xs font-medium text-slate-200 mb-6 backdrop-blur-md hover:border-cyan-500/50 transition-all duration-300 text-center max-w-full">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -38,7 +38,7 @@ export default function Hero() {
 
         {/* Hero Name / Headline */}
         <div className="relative mb-5 text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-tight">
+          <h1 className="text-3xl min-[420px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-tight break-words">
             {personalInfo.name}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400">
               {personalInfo.surname}
@@ -66,10 +66,10 @@ export default function Hero() {
         </p>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 mb-10">
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-3.5 mb-10 w-full sm:w-auto px-4 sm:px-0">
           <a
             href="#projects"
-            className="group px-7 py-3 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-cyan-500/40 hover:scale-105 flex items-center gap-2"
+            className="w-full sm:w-auto justify-center group px-7 py-3 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-cyan-500/40 hover:scale-105 flex items-center gap-2"
           >
             <span>Explore Projects</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -79,7 +79,7 @@ export default function Hero() {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-full bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-slate-700/80 hover:border-cyan-500/40 shadow-sm"
+            className="w-full sm:w-auto justify-center px-6 py-3 rounded-full bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-slate-700/80 hover:border-cyan-500/40 shadow-sm"
           >
             <Github className="w-4 h-4 text-white" />
             <span>GitHub Profile</span>
@@ -87,7 +87,7 @@ export default function Hero() {
 
           <a
             href={'mailto:' + personalInfo.email}
-            className="px-6 py-3 rounded-full bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-slate-700/80 hover:border-cyan-500/40 shadow-sm"
+            className="w-full sm:w-auto justify-center px-6 py-3 rounded-full bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all duration-300 flex items-center gap-2 border border-slate-700/80 hover:border-cyan-500/40 shadow-sm"
           >
             <Mail className="w-4 h-4 text-cyan-400" />
             <span>Email Me</span>

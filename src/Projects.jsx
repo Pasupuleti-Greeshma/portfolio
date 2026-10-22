@@ -162,7 +162,7 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-4 pt-3">
+                  <div className="flex flex-wrap items-center gap-3 pt-3">
                     <a
                       href={proj.github}
                       target="_blank"
